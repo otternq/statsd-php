@@ -10,10 +10,6 @@ class TelegrafClient extends Client
     /**
      * format tags for the telegraf message
      *
-     * @param string $key
-     * @param int $value
-     * @param string $type
-     * @param int $sampleRate
      * @param array $tags
      */
     protected function convertTagsForMessage($tags = []) {

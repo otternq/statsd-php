@@ -12,47 +12,47 @@ class Client
      *
      * @var Connection
      */
-    private $connection;
+    protected $connection;
 
     /**
      * holds all the timings that have not yet been completed
      *
      * @var array
      */
-    private $timings = [];
+    protected $timings = [];
 
     /**
      * holds all memory profiles like timings
      *
      * @var array
      */
-    private $memoryProfiles = [];
+    protected $memoryProfiles = [];
 
     /**
      * global key namespace
      *
      * @var string
      */
-    private $namespace = '';
+    protected $namespace = '';
 
     /**
      * stores the batch after batch processing was started
      *
      * @var array
      */
-    private $batch = [];
+    protected $batch = [];
 
     /**
      * batch mode?
      *
      * @var boolean
      */
-    private $isBatch = false;
+    protected $isBatch = false;
 
     /**
      * @var bool
      */
-    private $sampleRateAllMetrics = 1;
+    protected $sampleRateAllMetrics = 1;
 
     /**
      * initializes the client object
@@ -251,7 +251,7 @@ class Client
      * @param int $sampleRate
      * @param array $tags
      */
-    private function send($key, $value, $type, $sampleRate, $tags = [])
+    protected function send($key, $value, $type, $sampleRate, $tags = [])
     {
         if ($sampleRate < 1 && mt_rand() / mt_getrandmax() > $sampleRate) {
             return;
